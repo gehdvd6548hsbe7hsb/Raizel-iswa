@@ -170,7 +170,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
         pattern: "snumber",
-        alias: ["sn"],
+        alias: ["sn","iswa","تخمين"],
         category: "search",
         react: "🏆",
         desc: "Searches in given rage about given number.",
@@ -179,7 +179,7 @@ cmd({
     },
     async(Void, citel, text) => {
         var inputnumber = text.split(" ")[0]
-        if (!inputnumber.includes('x')) return citel.reply('You did not add x\nExample: iswa 9196285162xx')
+        if (!inputnumber.includes('x')) return citel.reply('مثال  تخمين +19292998-xxx)
         citel.reply(`Searching for WhatsApp account in given range...`)
 
         function countInstances(string, word) {
@@ -196,9 +196,9 @@ cmd({
         } else if (random_length == 3) {
             randomxx = 1000
         }
-        var text = `*--『 List of Whatsapp Numbers 』--*\n\n`
-        var nobio = `\n*Bio:* || \nHey there! I am using WhatsApp.\n`
-        var nowhatsapp = `\n*Numbers with no WhatsApp account within provided range.*\n`
+        var text = `*--『 تخمين برعاية رايزل 』--*\n\n`
+        var nobio = `\n*بايو:* || \nمرحبا انا استخدم واتساب.\n`
+        var nowhatsapp = `\n*ارقام مادخلت واتساب .*\n`
         for (let i = 0; i < randomxx; i++) {
             var nu = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
             var status1 = nu[Math.floor(Math.random() * nu.length)]
@@ -226,7 +226,7 @@ cmd({
                 if (anu1 == '401' || anu1.status.length == 0) {
                     nobio += `wa.me/${anu[0].jid.split("@")[0]}\n`
                 } else {
-                    text += `🧐 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*Bio :* ${anu1.status}\n🍁*Last update :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n`
+                    text += ` *الرقم:* wa.me/${anu[0].jid.split("@")[0]}\n *بايو :* ${anu1.status}\n*التاريخ :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n`
                 }
             } catch {
                 nowhatsapp += `${number0}${i}${number1}\n`
